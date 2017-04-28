@@ -1,3 +1,0 @@
-# ProjetPHPbdd
-
-blablabfdbgvlxdnugb
