@@ -12,8 +12,8 @@
 Sélectionner votre année :
 </td>
 <td>
-<form method="GET" action="emploi.php">
-<select name="annee">
+<form method="GET" action="emploieleve.php">
+<select name="annees">
 <!-- <option value="" selected></option> --> 
 <?php
 $db = new SQLite3('essai.db'); #base de données
@@ -37,7 +37,7 @@ Sélectionner votre classe :
 </td>
 
 <td>
-<select name="classe">
+<select name="classes">
 <!-- <option value="" selected></option> --> 
 <?php
 $db = new SQLite3('essai.db'); #base de données
