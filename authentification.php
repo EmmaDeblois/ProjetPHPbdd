@@ -50,7 +50,10 @@ if ($password == $row[0])
 		<input type='hidden' name='essai' value='" , $_POST['enseignant'] , "' />
 	</form>";
 }else{
-	echo "Erreur d'authentification	";
+	echo "Erreur d'authentification" .
+	"<form method='POST' action='enseignants.php'>
+		<input type='submit' name='retour' value='Revenir à l authentification'/>
+	</form>";
 }
 }
 
