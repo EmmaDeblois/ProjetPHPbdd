@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
    <meta charset="utf-8"/>
@@ -25,7 +26,7 @@ if (array_key_exists('classes', $_GET)) {
 
 
 $query = 'SELECT "Jour", "Heure_debut", "Heure_fin", "Enseignant", "Cours", "Salle"'.
-    'FROM essai2 WHERE 1 ';
+    'FROM emploidutemps WHERE 1 ';
     
 if ($annee) {
     $query = $query . 'AND "Annee_detudes" = \'' . $annee . '\' ' ;
@@ -39,7 +40,7 @@ if ($classe) {
 
 #echo $query;
 
-$db = new SQLite3('essai.db');
+$db = new SQLite3('emploidutemps.db');
 $results = $db->query($query);
 
 while ($row = $results->fetchArray()) {
@@ -47,13 +48,13 @@ while ($row = $results->fetchArray()) {
    # $date = substr($full_date,0,10);
     echo "<tr>";
     #echo "<td>",$date,"</td>";
-	echo "<td>",$row[0],"</td>";
-    echo "<td>",$row[1],"</td>";
-    echo "<td>",$row[2],"</td>";
-    echo "<td>",$row[3],"</td>";
-	echo "<td>",$row[4],"</td>";
-	echo "<td>",$row[5],"</td>";
-    #echo "<td><input type='radio' name='id' value='",$row[4],"'/></td>";
+	echo "<td><center>",$row[0],"</center></td>";
+    echo "<td><center>",$row[1],"</center></td>";
+    echo "<td><center>",$row[2],"</center></td>";
+    echo "<td><center>",$row[3],"</center></td>";
+	echo "<td><center>",$row[4],"</center></td>";
+	echo "<td><center>",$row[5],"</center></td>";
+    #echo "<td><input type='radio' name='supp' value='",$row[4],"'/></td>";
     echo "</tr>\n";
 }
 

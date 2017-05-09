@@ -16,10 +16,10 @@ Sélectionner votre année :
 <select name="annees">
 <!-- <option value="" selected></option> --> 
 <?php
-$db = new SQLite3('essai.db'); #base de données
+$db = new SQLite3('emploidutemps.db'); #base de données
 
 $results = $db->query(
-    'SELECT DISTINCT "Annee_detudes" FROM essai2 ORDER BY "Annee_detudes"' # on met dans la variable results le nom des gares dans l'ordre alphabétique
+    'SELECT DISTINCT "Annee_detudes" FROM emploidutemps ORDER BY "Annee_detudes"' # on met dans la variable results le nom des gares dans l'ordre alphabétique
 );
 
 while ($row = $results->fetchArray()) { #on met les résultats dans un tableau
@@ -40,10 +40,10 @@ Sélectionner votre classe :
 <select name="classes">
 <!-- <option value="" selected></option> --> 
 <?php
-$db = new SQLite3('essai.db'); #base de données
+$db = new SQLite3('emploidutemps.db'); #base de données
 
 $results = $db->query(
-    'SELECT DISTINCT "Classe" FROM essai2 ORDER BY "Classe"' # on met dans la variable results le nom des gares dans l'ordre alphabétique
+    'SELECT DISTINCT "Classe" FROM emploidutemps ORDER BY "Classe"' # on met dans la variable results le nom des gares dans l'ordre alphabétique
 );
 
 while ($row2 = $results->fetchArray()) { #on met les résultats dans un tableau
@@ -61,7 +61,7 @@ while ($row2 = $results->fetchArray()) { #on met les résultats dans un tableau
 
 </tr>
 </form>
-<table>
+</table>
 
 </body>
 </html>

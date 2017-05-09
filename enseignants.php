@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
    <meta charset="utf-8"/>
@@ -9,7 +10,7 @@
 <BR>
 <h3>Merci de vous identifier</h3>
 <BR>
-<form method="POST" action="enseignantsedt.php">
+<form method="POST" action="authentification.php">
 <table>
 
 <tr>
@@ -23,10 +24,10 @@ Votre nom :
 <select name="enseignant">
 <option value="" selected></option>
 <?php
-$db = new SQLite3('essai.db'); #base de données
+$db = new SQLite3('enseignantsmdp.db'); #base de données
 
 $results = $db->query(
-    'SELECT DISTINCT "Enseignant" FROM essai2 ORDER BY "Enseignant"' # on met dans la variable results le nom des gares dans l'ordre alphabétique
+    'SELECT DISTINCT "login" FROM mdp ORDER BY "login"' # on met dans la variable results le nom des gares dans l'ordre alphabétique
 );
 
 while ($row3 = $results->fetchArray()) { #on met les résultats dans un tableau
@@ -47,7 +48,7 @@ Mot de passe :
 </td>
 
 <td>
-<input type="text" name="mdp" />
+<input type="password" name="password" />
 </td>
 
 </tr>
