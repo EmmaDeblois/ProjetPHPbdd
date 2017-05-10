@@ -7,8 +7,8 @@
 <body>
 <h1>Cours supprimé</h1>
 <?php
-if (array_key_exists('id', $_POST)) {
-	$id=$_POST['id'];
+if (array_key_exists('id', $_GET)) {
+	$id=$_GET['id'];
     $delete = 'DELETE from emploidutemps WHERE "ID" = \'' . $id . '\'';
     $db = new SQLite3('emploidutemps.db');
     $results = $db -> exec($delete);
@@ -17,5 +17,7 @@ if (array_key_exists('id', $_POST)) {
 } else {
 echo "<p>Veuillez sélectionner un cours</p>";
 }
+#echo $id;
+#echo $delete;
 ?></body>
 </html>
