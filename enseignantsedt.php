@@ -3,11 +3,13 @@
 <head>
    <meta charset="utf-8"/>
      <title>Emploi du temps</title>
+	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include('menu.php'); ?>
 <h1> Emploi du temps </h1>
-<form action="suppression.php" method="GET"><!-- Pour retourner les objets-->
-<table>
+<form action="suppression.php" method="GET">
+<table class="coursens">
 <tr><th>Jour</th><th>Heure de d&eacute;but</th><th>Heure de fin</th> <th>Classe</th><th>Salle</th><th><input type="submit" value='Supprimer les cours s&eacute;lectionn&eacute;s'/></th><!-- tableau premiere ligne -->
 </tr>
 
@@ -27,6 +29,13 @@ if ($enseignant) {
     $query = $query . 'AND "Enseignant" = \'' . $enseignant . '\' ' ;
 }
 
+$query= $query . 'ORDER BY CASE "jour"
+                 WHEN "Lundi" THEN 1 
+                 WHEN "Mardi" THEN 2 
+                 WHEN "Mercredi" THEN 3 
+                 WHEN "Jeudi" THEN 4 
+                 WHEN "Vendredi" THEN 5 END,
+				 "Heure_debut";';
 
 #echo $query;
 
@@ -42,11 +51,11 @@ while ($row = $results->fetchArray()) {
     echo "<td><center>",$row[2],"</center></td>";
     echo "<td><center>",$row[4],$row[5],"</center></td>";
 	echo "<td><center>",$row[6],"</center></td>";
-	echo "<td><center><input type='radio' name='id' value='",$row[7],"'/></center></td>";
+	echo "<td><center><input type='radio' name='id' id='geant' value='",$row[7],"'/></center></td>";
     echo "</tr>\n";
 }
 
-echo 'Voici votre emploi du temps ' . $enseignant ;
+echo "<div id='ttitre'>Voici votre emploi du temps " . $enseignant . "</div></br>";
 
 ?>
 </table>

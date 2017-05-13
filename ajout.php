@@ -2,8 +2,10 @@
 <head>
    <meta charset="utf-8"/>
      <title>Ajout d'un cours</title>
+	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include('menu.php'); ?>
 <h1> Ajout d'un cours </h1>
 <form method="POST" action="add.php">
 
@@ -14,7 +16,7 @@ Année :
 $db = new SQLite3('emploidutemps.db');
 
 $results = $db->query(
-    'SELECT DISTINCT "Annee_detudes" FROM emploidutemps ORDER BY "Annee_detudes"'
+    'SELECT DISTINCT "Annee_detudes" FROM emploidutemps ORDER BY "Annee_detudes" DESC'
 );
 
 while ($row = $results->fetchArray()) {
@@ -125,7 +127,7 @@ while ($row = $results->fetchArray()) {
 </select>
 <br/>
 
-
+<br/>
 <input type="submit" name="New" value="Ajouter le cours"/>
 </form>
 </body>

@@ -3,8 +3,10 @@
 <head>
    <meta charset="utf-8"/>
      <title>Cours supprimé</title>
+	 	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include('menu.php'); ?>
 <h1>Cours supprimé</h1>
 <?php
 if (array_key_exists('id', $_GET)) {
@@ -17,7 +19,6 @@ if (array_key_exists('id', $_GET)) {
 } else {
 echo "<p>Veuillez sélectionner un cours</p>";
 }
-#echo $id;
-#echo $delete;
+
 ?></body>
 </html>

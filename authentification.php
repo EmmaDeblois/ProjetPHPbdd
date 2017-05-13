@@ -3,8 +3,10 @@
 <head>
    <meta charset="utf-8"/>
      <title>Emploi du temps</title>
+	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include('menu.php'); ?>
 <h1> Authentification </h1>
 
 <?php
@@ -22,10 +24,6 @@ if (array_key_exists('password', $_POST)) {
 }
 
 
-
-
-#$loginexact= $db->query('SELECT login FROM mdp');
-#$mdpexact= $db->query('SELECT password FROM mdp');
 $query= 'SELECT "password" FROM mdp WHERE 1 ';
 	
 if ($login) {
@@ -35,7 +33,7 @@ if ($login) {
 $db = new SQLite3('enseignantsmdp.db');
 	
 $reponse = $db->query($query);
-#$donnees = $reponse_login->fetch();
+
 #echo $query;
 #echo $reponse;
 
@@ -43,10 +41,10 @@ $reponse = $db->query($query);
 while ($row = $reponse->fetchArray()) {
 if ($password == $row[0])
 {
-    // La suite de mon code qui y sera après que je n'ai plus d'erreur et pour l'instant c'est :
-    echo "Authentification réusite" .
+   
+    echo "Authentification réussie" .
 	"<form method='POST' action='enseignantsedt.php'>
-		<input type='submit' name='verif' value='Continuer'/>
+		<input type='submit' name='verif' class='verif' value='Continuer'/>
 		<input type='hidden' name='essai' value='" , $_POST['enseignant'] , "' />
 	</form>";
 }else{

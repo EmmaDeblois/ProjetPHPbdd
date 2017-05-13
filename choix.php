@@ -5,7 +5,8 @@
 	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<?php include('apasperdre.php'); ?>
+<?php include('menu.php'); ?>
+
 <BR>
 <center> <h1> Bienvenue sur la page du Collège Emma Deblois</h1></center>
 <BR>
@@ -32,5 +33,6 @@ Vous êtes : <br/>
 </tr>
 
 </table>
+
 </body>
 </html>

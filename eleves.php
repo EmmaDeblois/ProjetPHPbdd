@@ -2,8 +2,10 @@
 <head>
    <meta charset="utf-8"/>
      <title>Emploi du temps</title>
+	 	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include('menu.php'); ?>
 <center> <h1> Emploi du temps</h1></center>
 <BR>
 <table>
@@ -14,12 +16,12 @@ Sélectionner votre année :
 <td>
 <form method="GET" action="emploieleve.php">
 <select name="annees">
-<!-- <option value="" selected></option> --> 
+
 <?php
 $db = new SQLite3('emploidutemps.db'); #base de données
 
 $results = $db->query(
-    'SELECT DISTINCT "Annee_detudes" FROM emploidutemps ORDER BY "Annee_detudes"' # on met dans la variable results le nom des gares dans l'ordre alphabétique
+    'SELECT DISTINCT "Annee_detudes" FROM emploidutemps ORDER BY "Annee_detudes" DESC' # on met dans la variable results le nom des gares dans l'ordre alphabétique
 );
 
 while ($row = $results->fetchArray()) { #on met les résultats dans un tableau

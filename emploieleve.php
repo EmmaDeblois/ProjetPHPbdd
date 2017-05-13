@@ -3,11 +3,17 @@
 <head>
    <meta charset="utf-8"/>
      <title>Emploi du temps</title>
+	 	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1> Emploi du temps </h1>
-<!--<form action="returned.php" method="GET"> --><!-- Pour retourner les objets-->
-<table>
+<?php include('menu.php'); ?>
+<h1> Emploi du temps de la <?php echo $_GET['annees'];
+echo$_GET['classes'];
+
+?>
+</h1>
+
+<table class="coursens">
 <tr><th>Jour</th><th>Heure de début</th><th>Heure de fin</th><th>Matière</th> <th>Enseignant</th><th>Salle</th><!-- tableau premiere ligne -->
 </tr> <!-- fin de la ligne du tableau -->
 
@@ -15,7 +21,7 @@
 if (array_key_exists('annees', $_GET)) {
     $annee=$_GET['annees'];
 } else {
-    $annee=NULL;
+		$annee=NULL;
 }
 
 if (array_key_exists('classes', $_GET)) {
@@ -36,7 +42,13 @@ if ($classe) {
     $query = $query . 'AND "Classe" = \'' . $classe . '\' ' ;
 }
 
-#$query = $query . "LIMIT 10 " . "OFFSET " . $offset ;
+$query= $query . 'ORDER BY CASE "jour"
+                 WHEN "Lundi" THEN 1 
+                 WHEN "Mardi" THEN 2 
+                 WHEN "Mercredi" THEN 3 
+                 WHEN "Jeudi" THEN 4 
+                 WHEN "Vendredi" THEN 5 END,
+				 "Heure_debut";';
 
 #echo $query;
 
@@ -44,17 +56,14 @@ $db = new SQLite3('emploidutemps.db');
 $results = $db->query($query);
 
 while ($row = $results->fetchArray()) {
-    #$full_date = $row[0];
-   # $date = substr($full_date,0,10);
+
     echo "<tr>";
-    #echo "<td>",$date,"</td>";
 	echo "<td><center>",$row[0],"</center></td>";
     echo "<td><center>",$row[1],"</center></td>";
     echo "<td><center>",$row[2],"</center></td>";
     echo "<td><center>",$row[3],"</center></td>";
 	echo "<td><center>",$row[4],"</center></td>";
 	echo "<td><center>",$row[5],"</center></td>";
-    #echo "<td><input type='radio' name='supp' value='",$row[4],"'/></td>";
     echo "</tr>\n";
 }
 

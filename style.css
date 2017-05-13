@@ -1,58 +1,157 @@
 body {
  font-family:"trebuchet ms",sans-serif;
  font-size:90%;
+   background:rgb(80%,80%,80%);
+   text-align: center;
  }
+ 
+nav.menu { 
+  position:relative;
+  left:1%;
+  top:-100px;
+  width:17%;
+  background:#DE9657;
+  border:thin silver solid;
+}
+
+nav.acceuil { 
+  position:relative;
+  left:1%;
+  top:-250px;
+  width:17%;
+  background:#DE9657;
+  border:thin silver solid;
+}
+
+div.eltmenu { 
+  display:block;
+  padding:3px;
+  border: 2px outset rgb(230,230,255);
+}
+div.eltmenu:hover { 
+  border-style: inset;
+}
+nav.menu a:link { 
+  text-decoration:none; 
+}
+
+a:link,a:hover,a:visited,a:visited:hover { 
+  color:black; 
+} 
+
+table{
+	margin:auto;
+    background-color : rgb(80%,80%,80%);
+	  border-collapse:collapse;
+}
+
+.coursens table{
+	margin:auto;
+}
+
+.coursens th{
+	border:thin solid black;
+    padding:2px 5px;	
+}
+
+.coursens td{
+	border:thin solid black;
+	padding:2px 5px;	
+	text-align :center;
+}
+
+tr:hover th {
+  color:black;
+}
+tr:hover { 
+  height:3em; 
+}
+
+td{
+	background:rgb(80%,80%,80%);
+	text-align :center;
+}
  
 header
 {
-
-	background:url(baniere.png) no-repeat;
-
+	background:url(baniere.png);
 	background-size:cover;
     margin:0;
-    width:cover;
-    height:35%;
+    width:covers;
+    height:225px;
     background-repeat:no-repeat;
 }
+
 form {
- background-color:#FAFAFA;
- padding:10px;
- width:280px;
+	background-color:rgb(80%,80%,80%);
+	padding:10px;
+	width:280px;
+	margin: 0 auto;
  }
+ 
 fieldset {
- padding:0 20px 20px 20px;
- margin-bottom:10px;
- border:1px solid #DF3F3F;
+	padding:0 20px 20px 20px;
+	margin-bottom:10px;
+	border:1px solid #DF3F3F;
  }
 legend {
- color:#DF3F3F;
- font-weight:bold
+	color:#DF3F3F;
+	font-weight:bold
  }
+ 
+#geant{
+	background-color:rgb(80%,80%,80%)
+}
+
+#ttitre{
+	font-variant:small-caps;
+	font-weight:bold;
+	color:#53B19C;
+}
+
 label {
- margin-top:10px;
- display:block;
+	margin-top:10px;
+	display:block;
  }
 label.inline {
- display:inline;
- margin-right:50px;
+	display:inline;
+	margin-right:50px;
  }
 input, textarea, select, option {
- background-color:#FFF3F3;
+	background-color:#FFF3F3;
  }
 input, textarea, select {
- padding:3px;
- border:1px solid #F5C5C5;
- border-radius:5px;
- width:200px;
- box-shadow:1px 1px 2px #C0C0C0 inset;
+	padding:3px;
+	border:1px solid #F5C5C5;
+	border-radius:5px;
+	width:200px;
+	box-shadow:1px 1px 2px #C0C0C0 inset;
  }
 select {
- margin-top:10px;
+	margin-top:10px;
  }
 
-input[type=submit], input[type=reset] {
- width:100px;
- margin-left:5px;
- box-shadow:1px 1px 1px #D83F3D;
- cursor:pointer;
+.bouton {
+	width:100px;
+	margin-left:5px;
+	box-shadow:1px 1px 1px #D83F3D;
+	cursor:pointer;
+}
+ 
+ input[type=submit]{
+	 box-shadow:1px 1px 1px #D83F3D;
+	 
  }
+ 
+ h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: -100px;
+    margin-bottom: 0;
+    color: #53B19C;
+    font-family: 'Gabriela', serif;
+    font-size: 30px;
+    letter-spacing: .10em;
+    text-align: center;
+	text-shadow: 10px 5px 5px #53B19C;
+}

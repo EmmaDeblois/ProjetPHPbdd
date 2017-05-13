@@ -2,8 +2,10 @@
 <head>
    <meta charset="utf-8"/>
      <title>Nouveau cours</title>
+	 	 	 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include('menu.php'); ?>
 <h1>Cours ajouté</h1>
 <?php
 
@@ -16,21 +18,15 @@
  $enseignant=$_POST['enseignant'];
  $matiere=$_POST['matiere'];
  $salle=$_POST['salle'];
- #$gare=$db->querySingle('SELECT "Gare" FROM trouve WHERE "Code UIC" = \''
- #. $uic .'\''); 
  $id = $db->querySingle('SELECT MAX("ID") FROM emploidutemps') . '0';
  
-
- #date_default_timezone_set('CET');
- #$d=date("Y-m-d\TG:i:sO");
-//2014-05-22T12:35:16+02:00
-/* $id=NULL; */
 
 $insert = 'INSERT INTO emploidutemps ("ID", "Annee_detudes", "Classe", "Jour", "Heure_debut", "Heure_fin","Enseignant", "Cours", "Salle") '.
     'VALUES (\''. $id .'\',\''. $annee .'\',\''. $classe .'\',\''. $jour .'\',\''. $debut .'\',\''. $fin .'\',\''. $enseignant .'\',\''. $matiere .'\',\''. $salle .'\')';
 
 $db->exec($insert);
-echo $insert;
+#echo $insert;
+echo "Le cours a été ajouté avec succès"
 
 ?>
 </body>
